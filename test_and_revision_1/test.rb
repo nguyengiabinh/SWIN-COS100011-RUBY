@@ -86,7 +86,7 @@ def main
     # units = read_units 
     # print_units(units)
     courses = read_courses 
-    print_courses 
+    print_courses(courses) 
 end 
 
 main 
