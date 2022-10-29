@@ -31,7 +31,7 @@ def read_course
     abbre = read_string("Course shorten name")
     name = read_string("Course full name")
     units = read_units
-    course = Course.new(abbre, name, units)
+    course = Course.new(abbre, name, location)
 end 
 
 def read_units 
