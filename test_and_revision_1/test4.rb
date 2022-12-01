@@ -1,52 +1,59 @@
 require './input_functions'
-
 # Complete the code below
 # Use input_functions to read the data from the user
 
-class Bird
-	attr_accessor :id, :location, :species, :cage_number
-
-	def initialize(id, location, species, cage_number)
-		@id = id
-		@location = location
-		@species = species
-		@cage_number = cage_number
+class Baby
+	attr_accessor :name, :weight, :gender, :ward
+	def initialize (name, weight, gender, ward)
+	 @name = name
+	 @weight = weight
+	 @gender = gender
+	 @ward = ward
 	end
 end
 
-def read_bird()
-	id = read_integer("Enter bird id: ")
-	location = read_string("Enter bird location: ")
-	species = read_string("Enter bird species: ")
-	cage_number = read_integer("Enter bird cage number: ")
-	return Bird.new(id, location, species, cage_number)
+def read_a_baby
+    name = read_string("Enter baby name:")
+    weight = read_integer("Enter birth weight (kgs): ")
+    gender = read_string("Enter gender:")
+    ward = read_string("Enter ward: ")
+    baby = Baby.new(name, weight, gender, ward)
+	
 end
 
-def read_birds()
-	numberofbirds = read_integer("How many birds are you entering: ")
-	bird_total = Array.new()
-	for i in 1..numberofbirds
-		bird_total << read_bird()
-	end
-	return bird_total
+def read_babies
+ count = read_integer("How many babies are you entering:")
+ babies = Array.new()
+ i = 0
+ while (i < count)
+    baby = read_a_baby()
+    babies << baby
+    i += 1
+ end
+   return babies
+  
 end
 
-def print_bird(bird)
-	puts("Id #{bird.id}")
-	puts("Location #{bird.location}")
-	puts("species #{bird.species}")
-	puts("Cage Number #{bird.cage_number}")
+def print_a_baby(baby)
+
+    puts("Baby Name#{baby.name}")
+    puts("Birth Weight#{baby.weight}")
+    puts("Gender #{baby.gender}")
+    puts("Ward #{baby.ward}")
 end
 
-def print_birds(birds)
-	birds.each do |bird|
-		print_bird(bird)
-	end
+def print_babies(babies)
+    count = babies.length
+    i = 0
+    while (i < count)
+        print_a_baby(babies[i])
+        i += 1
+    end   
 end
 
-def main()
-	birds = read_birds()
-	print_birds(birds)
+def main
+ babies = read_babies()
+ print_babies(babies)
 end
 
-main()
+main

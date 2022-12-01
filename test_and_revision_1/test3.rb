@@ -1,4 +1,3 @@
-
 require './input_functions'
 
 # Complete the code below
@@ -24,19 +23,18 @@ end
 
 
 def read_races
-	count = read_integer("How many races are you entering:")
-    races = Array.new()
-    i = 0
-    while (i < count)
+ count = read_integer("How many races are you entering:")
+ races = Array.new()
+ i = 0
+  while (i < count)
      race = read_a_race()
      races << race
      i += 1
-    end
+  end
     return races
 end
 
 def print_a_race(race)
-
     puts("Race Description #{race.description}")
     puts("Id #{race.id}")
     puts("Time #{race.time}")
